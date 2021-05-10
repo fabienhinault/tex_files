@@ -1,0 +1,19 @@
+$$\vbox{\+\bf if $n<r$ \cleartabs&\bf then $n:=n+1$\cr
+\+&\bf else &{\bf begin} ${\it print\_totals}$; $n:=0$;\cr
+\+&&{\bf end};\cr
+\+\bf while $p>0$ \bf do\cr
+\+\quad\cleartabs&\bf begin $q:=link(p);\ free\_node(p);\ p:=q;$\cr
+\+&\bf end\rm ;\cr}$$
+
+
+Answer
+
+$$\vbox{\+\bf if $n<r$ \cleartabs&\bf then $n:=n+1$\cr
+\+&\bf else &{\bf begin} ${\it print\_totals}$; $n:=0$;\cr
+\+&&{\bf end};\cr
+\+\bf while $p>0$ do\cr
+\+\quad\cleartabs&{\bf begin} $q:={\it link}(p)$;
+${\it free\_node}(p)$; $p:=q$;\cr
+\+&{\bf end};\cr}$$
+
+\end
