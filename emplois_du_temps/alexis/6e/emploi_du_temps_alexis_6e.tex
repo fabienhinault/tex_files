@@ -4,8 +4,12 @@
 \def\apfran{AP Fran\c{c}ais}
 %\def\++{\+\hfill}
 
-\font\ss=cmss17 at 20pt
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
+\special{papersize=29.7cm,21cm}
+\pdfpageheight 21cm 
+\pdfpagewidth 29.7cm 
 
+\font\ss=cmss17 at 20pt
 \ss
 
 \halign{\hfil#\hfil&\hfil#\hfil&\hfil#\hfil&\hfil#\hfil&\hfil#\hfil\cr
