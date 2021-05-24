@@ -1,0 +1,24 @@
+\def\a{\b}
+\def\b{A\def\a{B\def\a{C\def\a{\b}}}}
+\def\puzzle{\a\a\a\a\a}
+
+\puzzle
+
+puzzle expands to five a's.
+
+The first a expands to b, which expands to ``A'' followed by a new definition for a.
+
+The second a expands to its new definition, which is ``B'' followed by a newer definition for a.
+
+The third a expands to its newer definition, which is ``C'' followed by a newest definition for a.
+
+The forth a expands to its newest definition, which is b, which has not changed, and still
+expands to ``A'' followed by a not so new definition of a.
+
+The fifth a expands to this last definition, which is ``B'' followed by a definition for a that
+will not be used.
+
+The result is then: ``ABCAB''.
+
+\bye
+

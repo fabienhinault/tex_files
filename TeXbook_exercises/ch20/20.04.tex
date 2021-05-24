@@ -1,0 +1,13 @@
+\def\mustnt#1#2{I must not #1 in #2.\par}
+\mustnt{run}{the hall}
+\def\five#1#2{\mustnt{#1}{#2}\mustnt{#1}{#2}\mustnt{#1}{#2}\mustnt{#1}{#2} \mustnt{#1}{#2}}
+\def\twenty#1#2{\five{#1}{#2}\five{#1}{#2}\five{#1}{#2}\five{#1}{#2}}
+\def\punishment#1#2{\twenty{#1}{#2}\twenty{#1}{#2}\twenty{#1}{#2}\twenty{#1}{#2}\twenty{#1}{#2}}
+
+\punishment{run}{the hall}
+
+
+\bye
+
+
+
