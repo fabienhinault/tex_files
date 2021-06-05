@@ -1,0 +1,13 @@
+\def\c#1{\count1=#1}
+\def\s{\showthe\count1}
+\def\g#1{\global\count1=#1}
+
+
+
+{\c1\s\g2{\s\c3\s\g4\s\c5\s}\s\c6\s}\s
+
+1 2 3 4 5 4 6 4
+
+\bye
+
+
