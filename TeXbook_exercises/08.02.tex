@@ -1,0 +1,65 @@
+(a) What is the difference between categories 5 and 14?
+
+5 End of line (<return>)
+14 Comment character (%)
+Everything between a comment character and the beginning of the next line is dropped.
+The end of line is either dropped (if preceeded by spaces) or changed into a space.
+
+Answer:
+
+Both characters terminate the current line; but a character of category 5
+might be converted into 10 or a par token, while a character of category 14 never
+produces a token.
+
+
+(b) What is the difference between categories 3 and 4? 
+
+3 is to shifted from/to math mode.
+4 is to align things in an array.
+
+Answer:
+
+They produce character tokens stamped with different category
+numbers. For example, $ 3 is not the same token as $ 4 , so TEX’s digestive processes
+will treat them differently.
+
+
+(c) What is the difference between categories 11 and 12?
+
+Letters are letters, other characters are... others.
+
+Answer:
+
+Same as (b), plus the fact that control sequence names
+treat letters differently.
+
+
+(d) Are spaces ignored after active characters?
+
+No.
+
+
+(e) When a line ends with a
+comment character like %, are spaces ignored at the beginning of the next line?
+
+No, because the end of line has been dropped, and not transformed into space.
+The first space is passed, subsequent ones are ignored.
+
+Answer:
+
+Yes; characters of category 10 are ignored at the
+beginning of every line, since every line starts in state N .
+
+
+(f) Can
+an ignored character appear in the midst of a control sequence name?
+
+The control word stops before the first non-letter.
+
+Answer:
+
+No.
+
+\bye
+
+
