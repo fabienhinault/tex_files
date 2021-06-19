@@ -1,27 +1,25 @@
 \hbox{\vbox{\hbox to 1cm{\vrule height12pt \hss}\hrule}}
 
-\hbox{
-  \vbox{
-    \hbox{\vrule height12pt \hss}
-    \hrule width1cm
-  }
-}
+%\hbox to 1cm{\vrule height12pt\vbox to 12pt{\vss\hrule}}
 
+\def\division{\hbox{\vbox{\hbox to 1cm{\vrule height12pt \hss}\hrule}}}
 
+\division
 
-toto \vrule \ \hbox to 1cm{\vrule height12pt \vbox to 12pt{\vss \hrule}}
+\def\fourdivs{\hbox{\division\division\division\division}}
 
-toto \vrule \ \hbox to 1cm{\vrule height12pt \vbox to 12pt{\hbox{\hss} \hrule}}
+\fourdivs
 
-toto M \vrule
-toto \vrule \ \hbox to 1cm{\vrule height12pt \vbox to 12pt{\vss \hrule}}
+\def\divh#1{\hbox{\vbox{\hbox to 1cm{\vrule height#1 \hss}\hrule}}}
 
+\hbox{\divh{20pt}\fourdivs\divh{16pt}\fourdivs\vrule height20pt}
 
-toto {\tt |} \vrule
+Answer:
 
-ooo \vrule
+\def\tick#1{\vrule height 0pt depth #1pt}
+\def\\{\hbox to 1cm{\hfil\tick4\hfil\tick8}}
+\vbox{\hrule\hbox{\tick8\\\\\\\\\\\\\\\\\\\\}}
 
-toto \hbox to 1cm{\vrule height12pt  \vbox{\vss\hrule}}
 
 
 \bye

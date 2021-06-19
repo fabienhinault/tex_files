@@ -1,0 +1,35 @@
+\hbox{\vbox{\hbox to 1cm{\vrule height12pt \hss}\hrule}}
+
+\hbox to 1cm{\vrule height12pt\vbox to 12pt{\vss\hrule}}
+
+\def\division{\hbox{\vbox{\hbox to 1cm{\vrule height12pt \hss}\hrule}}}
+
+\division
+
+\def\fourdivs{\hbox{\division\division\division\division}}
+
+\fourdivs
+
+\def\divh#1{\hbox{\vbox{\hbox to 1cm{\vrule height#1 \hss}\hrule}}}
+
+\hbox{\divh{20pt}\fourdivs\divh{16pt}\fourdivs\vrule height20pt}
+
+Some trials:
+
+toto \vrule \ \hbox to 1cm{\vrule height12pt \vbox to 12pt{\vss \hrule}}
+
+toto \vrule \ \hbox to 1cm{\vrule height12pt \vbox to 12pt{\hbox{\hss} \hrule}}
+
+toto M \vrule
+toto \vrule \ \hbox to 1cm{\vrule height12pt \vbox to 12pt{\vss \hrule}}
+
+
+toto {\tt |} \vrule
+
+ooo \vrule
+
+toto \hbox to 1cm{\vrule height12pt  \vbox{\vss\hrule}}
+
+
+\bye
+

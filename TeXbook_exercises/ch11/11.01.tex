@@ -1,0 +1,24 @@
+
+{\tt
+\obeylines
+$\backslash$hbox(6.83331+2.15277)x18.6108
+.$\backslash$tenrm T
+.$\backslash$kern -1.66702
+.$\backslash$hbox(6.83331+0.0)x6.80557, shifted 2.15277
+..$\backslash$tenrm E
+.$\backslash$kern -1.25
+.$\backslash$tenrm X
+}
+
+Why are there two dots in the `..\tenrm E' line here?
+
+
+Because E is in a second level of hbox.
+
+
+Answer:
+
+
+This E is inside a box that’s inside a box.
+
+\bye
