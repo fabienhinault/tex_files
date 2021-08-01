@@ -1,0 +1,24 @@
+\def\\{\char"5C}
+\def\{{\char"7B}
+\def\}{\char"7D}
+\def\1{{\tt \\box1}}
+\def\2{{\tt \\box2}}
+\def\3{{\tt \\box3}}
+{\tt \\setbox3=\\vbox to3pt\{\\moveright3pt\\box1\\vskip-3pt plus3fil\\box2\}}
+
+The natural height is $-3$ pt. 
+There is 6 pt to add, all taken by the vskip.
+Finally, \3 is 3 pt high, 4 pt wide, and 2 pt deep.
+\1's reference point is 3 pt right and 3 pt up from \3's one.
+\2's reference point coincides with \3's one.
+
+Answer:
+
+The interline glue will be zero, and the natural height is 1 + 1 − 3 + 2 = 1 pt
+(because the depth of \2 isn’t included in the natural height); so the glue will
+ultimately become \\vskip-1pt when it’s set. Thus, \3 is 3 pt high, 2 pt deep, 4 pt
+wide. Its reference point coincides with that of \2; to get to the reference point of
+\1 you go up 2 pt and right 3 pt.
+
+
+\bye

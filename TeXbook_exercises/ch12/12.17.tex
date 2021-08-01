@@ -1,0 +1,18 @@
+\line{\hfil A puzzle.\hfilneg}
+
+The sum of the fils is zero, so there's no way to fill the line box to make it wide enough.
+Probably, this command throws an error.
+
+
+Answer:
+
+You get `A' at the extreme left and `puzzle.' at the extreme right, because the
+space between words has the only stretchability that is finite; the infinite stretchability
+cancels out. (In this case, TEX’s rule about infinite glue differs from what you would
+get in the limit if the value of 1 fil were finite but getting larger and larger. The true
+limiting behavior would stretch the text `A puzzle.' in the same way, but it would also
+move that text infinitely far away beyond the right edge of the page.)
+
+\bye
+
+

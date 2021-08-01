@@ -1,0 +1,22 @@
+\def\\{\char"5C}
+\def\1{{\tt \\box1}}
+\def\2{{\tt \\box2}}
+\def\3{{\tt \\box3}}
+%\def\\{\char'134}
+{\tt \\setbox3=\\hbox to3pt{\\hfil\\lower3pt\\box1\\hskip-3pt plus3fil\\box2}}
+{\tt \\lower3pt\\box1} has depth 4 pt, height -2pt and width 1pt.
+Naturally, \2 begins at $1 - 3 = -2$ pt, and ends at 0.
+Its natural witdth is therfore 0.
+3 pt remain to be added to reach the desired 3 pt. {\tt fil}s will catch them.
+{\tt \\hfil} takes 0.75 pt, and {\tt \\hskip-3pt plus3fil} takes 2.25 pt.
+So \3 is 2 pt high, 3 pt deep, and 3 pt wide.
+\1's reference point is 0.75 pt right from \3's one.
+\2's reference point is 1 pt right from \3's one.
+
+Answer:
+
+\3 is 2 pt high, 4 pt deep, 3 pt wide. Starting at the reference point of
+\3, go right .75 pt and down 3 pt to reach the reference point of \1; or go right
+1 pt to reach the reference point of \2.
+\bye
+

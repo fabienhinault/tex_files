@@ -1,0 +1,31 @@
+\def\\{\char"5C}
+\def\{{\char"7B}
+\def\}{\char"7D}
+\def\1{{\tt \\box1}}
+\def\2{{\tt \\box2}}
+\def\3{{\tt \\box3}}}
+\def\4{{\tt \\box4}}
+{\tt \\baselineskip=9pt minus3fil}
+
+{\tt \\setbox4=\\vbox to4pt\{\\vss\\box1\\moveleft4pt\\box2\\vss\}}
+
+The natural height is 10 pt. The desired height is 4 pt. That's 6 pt too much. These 6 pt are distributed
+among the 3 fil of the baseline skip, and the two fil of the two vss. So the baselineskip takes 
+$3 \times 6 / 5 = 3.6$ pt. The baselineskip is now 5.4 pt. So \4's height is 6.4 pt, its depth is 0 because
+of the ending glue, and its width is 1 pt.
+
+Answer:
+
+
+The interline glue will be 6 pt minus 3 fil; the final depth will be zero, since
+\2 is followed by glue; the natural height is 12 pt; and the shrinkability is 5 fil. So
+\4 will be 4 pt high, 0 pt deep, 1 pt wide, and it will contain five items: \\vskip
+-1.6pt, \1, \\vskip1.2pt, \\moveleft4pt\2, \\vskip-1.6pt. Starting at the ref-
+erence point of \4, you get to the reference point of \1 by going up 4.6 pt, or
+to the reference point of \2 by going up .4 pt and left 4 pt. (For example, you go
+up 4 pt to get to the upper left corner of \4; then down −1.6 pt, i.e., up 1.6 pt, to
+get to the upper left corner of \1; then down 1 pt to reach its reference point. This
+problem is clearly academic, since it’s rather ridiculous to include infinite shrinkability
+in the baselineskip.)
+
+\bye

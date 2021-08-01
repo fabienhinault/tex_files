@@ -1,0 +1,58 @@
+\def\\{$\backslash$}
+\obeylines
+
+\smallskip
+No mode can contain itself.
+No mode contains vertical mode: vertical mode is always on top.
+Only vertical mode can enclose horizontal mode.
+
+
+\smallskip
+Vertical mode $\rightarrow$ Internal vertical mode: at \\vbox
+Vertical mode $\rightarrow$ Horizontal mode: at each start of paragraph
+Vertical mode $\rightarrow$ Restricted horizontal mode: impossible
+Vertical mode $\rightarrow$ Math mode: impossible
+Vertical mode $\rightarrow$ Display math mode: at \$\$
+
+\smallskip
+Internal vertical mode $\rightarrow$ Restricted horizontal mode: \\hbox in a vbox
+Internal vertical mode $\rightarrow$ Math mode: impossible
+Internal vertical mode $\rightarrow$ Display math mode: \$\$ in a vbox
+
+\smallskip
+Horizontal mode $\rightarrow$ Internal vertical mode: possible
+Horizontal mode $\rightarrow$ Restricted horizontal mode: \\hbox in a paragraph
+Horizontal mode $\rightarrow$ Math mode: \$ in a paragraph
+Horizontal mode $\rightarrow$ Display math mode: impossible
+
+\smallskip
+Restricted horizontal mode $\rightarrow$ Internal vertical mode: possible
+Restricted horizontal mode $\rightarrow$ Math mode: \$ in a hbox
+Restricted horizontal mode $\rightarrow$ Display math mode: impossible
+
+\smallskip
+Math mode $\rightarrow$ Internal vertical mode: possible
+Math mode $\rightarrow$ Restricted horizontal mode:\\hbox in a formula
+Math mode $\rightarrow$ Display math mode: impossible
+
+
+\smallskip
+Display math mode $\rightarrow$  Internal vertical mode: possible
+Display math mode $\rightarrow$ Restricted horizontal mode: \\hbox
+Display math mode $\rightarrow$ Math mode: impossible
+
+\smallskip
+This is a paragraph with a vbox \vbox{\hbox{a} \hbox{b}}.
+This is a hbox with a vbox \hbox{\vbox{\hbox{a} \hbox{b}}}.
+This is a formula with a vbox $\vbox{\hbox{a} \hbox{b}}$.
+This is a displayed formula with a vbox $$\vbox{\hbox{a} \hbox{b}}$$.
+
+Answer:
+
+Vertical mode can occur only as the outermost mode; horizontal mode and
+display math mode can occur only when immediately enclosed by vertical or internal
+vertical mode; ordinary math mode cannot be immediately enclosed by vertical or
+internal vertical mode; all other cases are possible.
+
+\bye
+

@@ -1,0 +1,16 @@
+\def\\{\char"5C}
+\def\{{\char"7B}
+\def\}{\char"7D}
+\def\1{{\tt \\box1}}
+\def\2{{\tt \\box2}}
+\def\3{{\tt \\box3}}}
+\def\4{{\tt \\box4}}
+
+{\tt \\boxmaxdepth=-4pt}
+
+With a depth of $-4$ pt, the natural height of \4 is 16 pt. 12 extra pt for a shrinkability of 5.
+the glue between \1 and \2 is $6 - 3 \times 2.4 = -1.2$ pt. \4 has dimensions: w = 1 pt, d = -4 pt,
+h = 4 pt. rp1 is .4 pt above rp4, and rp2 is .4 pt below, and 4 pt left from rp4.
+
+
+\bye

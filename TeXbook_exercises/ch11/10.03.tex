@@ -1,0 +1,38 @@
+{\tt
+$\backslash$setbox1=$\backslash$hbox$\{$T$\backslash$kern+.1667em$\backslash$raise.5ex$\backslash$hbox$\{$E$\}$$\backslash$kern+.125em X$\}$}
+
+The width for the whole box will be $18.6108 + 2 \times 1.66702 + 2 \times 1.25 = 24.4448$
+
+The depth will be 0, and the width $6.83331+2.15277 = 8.98608$
+
+{\tt $\backslash$showbox1} would produce:
+
+{\tt \obeylines
+$\backslash$hbox(8.98608+0)x24.4448
+.$\backslash$tenrm T
+.$\backslash$kern 1.66702
+.$\backslash$hbox(6.83331+0.0)x6.80557, shifted -2.15277
+..$\backslash$tenrm E
+.$\backslash$kern 1.25
+.$\backslash$tenrm X
+}
+
+
+Real log:
+
+\setbox1=\hbox{T\kern+.1667em\raise.5ex\hbox{E}\kern+.125em X}
+\showbox1
+\box1
+
+{\tt \obeylines
+> $\backslash$box1=
+$\backslash$hbox(8.98608+0.0)x24.44484
+.$\backslash$tenrm T
+.$\backslash$kern 1.66702
+.$\backslash$hbox(6.83331+0.0)x6.80557, shifted -2.15277
+..$\backslash$tenrm E
+.$\backslash$kern 1.25
+.$\backslash$tenrm X
+}
+
+\bye

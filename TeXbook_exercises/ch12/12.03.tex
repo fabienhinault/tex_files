@@ -1,0 +1,18 @@
+\def\centerlinea#1{\line{\hfil#1\hfil}}
+\def\centerlineb#1{\line{\hfill#1\hfill}}
+\def\centerlinec#1{\line{\hss#1\hss}}
+
+With centerlinec, the line size can be less than \#1's size.
+In centerlinea, a hfil contained in \#1 will stretch, but not in centerlineb.
+
+Answer:
+
+The first two give an “overfull box” if the argument doesn’t fit on a line;
+the third allows the argument to stick out into the margins instead. (Plain TEX’s
+centerline is centerlinec; the stickout effect shows up in the narrow-column ex-
+periment of Chapter 6.) If the argument contains no infinite glue, centerlinea and
+centerlineb produce the same effect; but centerlineb will center an argument that
+contains ‘fil’ glue.
+
+\bye
+

@@ -1,0 +1,15 @@
+Why is there glue in one of these lists (modes.tex) but not in the others?
+
+No glue in vertical mode because it begins with \\hbox straight away.
+Glue in the restricted horizontal mode for the first space.
+No glue in inline math mode because it has its own rules about white spaces.
+No glue in internal vertical mode because nothing to put glue before switching to displayed math mode.
+No glue in displayed math mode because it is like inline math mode, not much enough to have glue.
+
+Answer:
+
+The output of \\tracingcommands shows that four blank space tokens were
+digested; these originated at the ends of lines 2, 3, 4, and 5. Only the first had any
+effect, since blank spaces are ignored in math formulas and in vertical modes.
+
+\bye

@@ -1,0 +1,31 @@
+\def\\{\char"5C}
+\def\bls{{\tt \\baselineskip}}
+\def\ls{{\tt \\lineskip}}
+\def\lsl{{\tt \\lineskiplimit}}
+
+Without plus or minus:
+Let $g$ be the interline glue, 
+$d$ the depth of the upper line,
+$h$ the height of the lower line.
+
+$$
+g = 
+\bls - d - h \quad {\rm if\ } \bls -d -h \ge \lsl
+$$
+$$
+g=
+\ls \quad {\rm else}
+$$
+
+So to have continuity, we need
+$\bls - d - h = \ls$ when $\bls -d -h = \lsl$, so $\lsl = \ls$
+
+Answer:
+
+The stretch and shrink components of \bls and \ls should
+be equal, and the \lsl should equal the normal \ls spacing, to
+guarantee continuity.
+
+
+\bye
+
