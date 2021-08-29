@@ -1,0 +1,12 @@
+Why is it better to type ‘Chapter\~12’ than to type ‘\\hbox{Chapter 12}’ ?
+
+Because it allows the break ``Chap-ter 12''.
+
+Answer:
+
+The space you get from ~ will stretch or shrink with the other spaces in the
+same line, but the space inside an hbox has a fixed width since that glue has already
+been set once and for all. Furthermore the first alternative permits the word Chap-
+ter to be hyphenated.
+
+\bye

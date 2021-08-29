@@ -1,0 +1,31 @@
+{\obeylines\smallskip
+Roses are red,
+\indent Violets are blue;
+Rhymes can be typeset
+\indent With boxes and glue.
+\smallskip}
+
+{\obeylines\smallskip
+Roses are red,
+\quad Violets are blue;
+Rhymes can be typeset
+\quad With boxes and glue.
+\smallskip}
+
+{\obeylines\smallskip
+Roses are red,
+\indent\indent  Violets are blue;
+Rhymes can be typeset
+\indent\indent  With boxes and glue.
+\smallskip}
+
+The second and fourth lines are indented by an additional “quad” of space,
+i.e., by one extra em in the current type style. (The control sequence quad does an
+hskip; when TEX is in vertical mode, hskip begins a new paragraph and puts glue
+after the indentation.) If indent had been used instead, those lines wouldn’t have
+been indented any more than the first and third, because indent is implicit at the
+beginning of every paragraph. Double indentation on the second and fourth lines could
+have been achieved by ‘indentindent’.
+
+
+\bye
