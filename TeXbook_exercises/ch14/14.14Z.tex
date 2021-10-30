@@ -1,0 +1,36 @@
+\parfillskip=\parindent
+\def\\#1{{\tt \char"5C #1}}
+
+We still haven’t discussed the special trick that allows the final line of a
+paragraph to be shorter than the others.
+Just before TEX begins to choose
+breakpoints, it does two important things: (1) If the final item of the current horizontal
+list is glue, that glue is discarded. 
+(The reason is that a blank space often gets into a
+token list just before \\par or just before \$\$, 
+and this blank space should not be part
+of the paragraph.) 
+(2) Three more items are put at the end of the current horizontal
+list: \\{penalty10000} (which prohibits a line break); \\{hskip\\parfillskip} (which adds
+“finishing glue” to the paragraph);
+and \\penalty-10000 (which forces the final break).
+Plain TEX sets \\parfillskip=0pt plus1fil,
+so that the last line of each paragraph will
+be filled with white space if necessary;
+but other settings of \\parfillskip are appropriate in special applications.
+For example, the present paragraph ends flush with the
+right margin, because it was typeset with \\parfillskip=0pt; the author didn’t have to
+rewrite any of the text in order to make this possible, since a long paragraph generally
+allows so much flexibility that a line break can be forced at almost any point. You
+can have some fun playing with paragraphs, because the algorithm for line breaking
+occasionally appears to be clairvoyant. Just write paragraphs that are long enough.
+
+
+We still haven’t discussed the special trick. 
+
+We still haven’t discussed the special trick that allows the final line of a
+paragraph to be shorter than the others.
+Just write paragraphs that are long enough.
+
+\bye
+

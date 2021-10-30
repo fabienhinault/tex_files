@@ -19,13 +19,20 @@ Rhymes can be typeset
 \indent\indent  With boxes and glue.
 \smallskip}
 
+\vbox{
+\hbox{Roses are red,}
+\hbox{\indent Violets are blue;}
+\hbox{Rhymes can be typeset}
+\hbox{\indent With boxes and glue.}
+}
+
 The second and fourth lines are indented by an additional “quad” of space,
 i.e., by one extra em in the current type style. (The control sequence quad does an
 hskip; when TEX is in vertical mode, hskip begins a new paragraph and puts glue
 after the indentation.) If indent had been used instead, those lines wouldn’t have
 been indented any more than the first and third, because indent is implicit at the
 beginning of every paragraph. Double indentation on the second and fourth lines could
-have been achieved by ‘indentindent’.
+have been achieved by ‘indent indent’.
 
 
 \bye

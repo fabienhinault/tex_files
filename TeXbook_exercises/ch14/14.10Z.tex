@@ -1,0 +1,14 @@
+What happens if you say  nobreak break or  break nobreak?
+
+-- the "nobreak" has no effect. It is equivalent to "break".
+
+Answer:
+
+You get a forced break as if nobreak were not present, because break cannot
+be cancelled by another penalty. In general if you have two penalties in a row, their
+combined effect is the same as a single penalty whose value is the minimum of the two
+original values, unless both of those values force breaks. (You get two breaks from
+breakbreak; the second one creates an empty line.)
+
+bye
+
