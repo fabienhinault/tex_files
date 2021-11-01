@@ -1,0 +1,12 @@
+\def\line{\hbox to\hsize}}
+
+\def\line{\hbox to\leftskip \hbox to\hsize \hbox to\rightskip}
+
+\def\line#1{\hbox to\leftskip \hbox to\hsize{#1}\hbox to\rightskip}
+
+
+Answer:
+
+\def\line#1{\hbox to\hsize{\hskip\leftskip#1\hskip\rightskip}}
+
+\bye

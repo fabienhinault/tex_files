@@ -1,0 +1,26 @@
+%TODO
+\topinsert \vskip 2in
+\hsize=3in \raggedright
+\noindent{\bf Figure 3.} This is the caption to the
+third illustration of my paper. I have left two inches
+of space above the caption so that there will be room
+to introduce special artwork. \endinsert
+
+Illustrations can be inserted in several ways using plain TEX. The simplest of
+these is called a “floating topinsert”; you say and TEX will attempt to put the vertical mode material at the top of the current page.
+If there’s no room for such an insertion on this page, TEX will insert it at the top of
+the next page. The hvertical mode materiali can contain embedded paragraphs that
+temporarily interrupt vertical mode in the usual way; for example:
+The caption in this example will be set ragged-right in a 3-inch column at the left of
+the page. Plain TEX automatically adds a “bigskip” below each topinsert; this will
+separate the caption from the text.
+
+\topinsert \vskip 2in
+\hsize=3in \raggedright
+\noindent{\bf Figure 3.} This is the caption to the
+third illustration of my paper. I have left two inches
+of space above the caption so that there will be room
+to introduce special artwork. \endinsert
+
+\bye
+
