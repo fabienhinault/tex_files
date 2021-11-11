@@ -1,0 +1,11 @@
+Guess: count1 = 7
+\count1=5 {\count1=2 \global\advance\count1by\count1
+\advance\count1by\count1}
+\showthe\count1
+Actual: count1 = 4
+
+count1 takes the values 5, then 2 (the old 5 is saved), then 4 (which is made
+global), then 8 (and 4 is saved); finally the value 4 is restored, and that is the answer.
+
+\bye
+

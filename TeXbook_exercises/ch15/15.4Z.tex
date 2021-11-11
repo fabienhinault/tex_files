@@ -1,12 +1,36 @@
-%TODO
 \topinsert \vskip 2in
-\hsize=3in \raggedright
+%\advance\hoffset by \hsize
+%\advance\hoffset by -3in
+\leftskip=\hsize
+\advance\leftskip by -3in plus 2em
+\parfillskip=0pt
+% \hsize=3in 
 \noindent{\bf Figure 3.} This is the caption to the
 third illustration of my paper. I have left two inches
 of space above the caption so that there will be room
 to introduce special artwork. \endinsert
 
-Illustrations can be inserted in several ways using plain TEX. The simplest of
+\topinsert Answers: \endinsert
+
+\topinsert\vskip2in\rightline{
+\vbox{
+\hsize=3in 
+\noindent{\bf Figure 3.} This is the caption to the
+third illustration of my paper. I have left two inches
+of space above the caption so that there will be room
+to introduce special artwork.
+}}
+\endinsert
+
+\topinsert \vskip 2in
+\leftskip=\hsize \advance\leftskip by-3in
+\noindent{\bf Figure 3.} This is the caption to the
+third illustration of my paper. I have left two inches
+of space above the caption so that there will be room
+to introduce special artwork. \endinsert
+
+
+Illustrations can be inserted in several ways using plain \TeX. The simplest of
 these is called a “floating topinsert”; you say and TEX will attempt to put the vertical mode material at the top of the current page.
 If there’s no room for such an insertion on this page, TEX will insert it at the top of
 the next page. The hvertical mode materiali can contain embedded paragraphs that
