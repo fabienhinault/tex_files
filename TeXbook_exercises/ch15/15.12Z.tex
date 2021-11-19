@@ -1,0 +1,9 @@
+\newcount\noteno
+\noteno=0
+\def\note#1{\global\advance\noteno by1 \footnote{$^{\the\noteno}$}{#1}}
+
+example,\note{First note.} it should produce
+the footnotes here\note{Second note.} if
+
+\bye
+
