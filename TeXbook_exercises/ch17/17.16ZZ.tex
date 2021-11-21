@@ -1,0 +1,48 @@
+\def\sqboxraw{\hbox to3pt {\vrule \vbox to3pt{\hrule \vfil \hfil \hrule} \vrule}}
+\def\sqbox{\vcenter to3pt {\sqboxraw}}
+\def\sqone{\hbox to3pt {\vrule height3pt \hfil \vrule height3pt}}
+% \def\sqtwo{\hbox to3pt {\vrule height3pt \hrule\vrule height3pt}}
+% You can't use `\hrule' here except with leaders.
+\def\sqtwo{\hbox to3pt {\vrule height3pt \leaders\hrule\hfil\vrule height3pt}}
+% \def\sqthree{\hbox to3pt {\vrule height3pt \vbox to3pt{{\leaders\hrule\hfil}\vfil{\leaders\hrule\hfil}}\vrule height3pt}}
+\def\sqa{\hbox to3pt {\vrule height3pt \vbox to3pt{\hrule width2.2pt\vfil\hrule width2.2pt}\vrule}}
+
+\def\sqb{\vcenter to3pt{\hrule width3pt \hbox to 3pt{\vrule height2.2pt \hfil \vrule height2.2pt}\hrule width3pt}}
+\def\sqdisplaytext{\vcenter to3pt{\hrule width3pt \hbox to 3pt{\vrule height2.2pt \hfil \vrule height2.2pt}\hrule width3pt}}
+\def\sqscript{\vcenter to2.1pt{\hrule height0.3pt width2.1pt \hbox to 2.1pt{\vrule width0.3pt height1.5pt \hfil \vrule width0.3pt height1.5pt}\hrule height0.3pt width2.1pt}}
+\def\sqscriptscript{\vcenter to1.5pt{\hrule width3pt width1.5pt \hbox to 1.5pt{\vrule width0.3pt height.9pt \hfil \vrule width0.3pt height.9pt}\hrule width3pt width1.5pt}}
+
+\def\square{\mathchoice{\sqdisplaytext}{\sqdisplaytext}{\sqscript}{\sqscriptscript}}
+
+$\square + x_{\square}^{\square} + x^{x^{\square}_{\square}}$
+
+$\sqb + \sqb + x$ \sqa
+
+\sqone
+
+\sqtwo
+
+% \sqfour
+
+%\sqthree
+
+\sqboxraw
+
+$\sqbox$
+
+\def\sqr#1#2{{\vcenter{\vbox{\hrule height.#2pt
+\hbox{\vrule width.#2pt height#1pt \kern#1pt
+\vrule width.#2pt}
+\hrule height.#2pt}}}}
+\def\squarea{\mathchoice\sqr34\sqr34\sqr{2.1}3\sqr{1.5}3}
+
+$\squarea + x_{\squarea}^{\squarea} + x^{x^{\squarea}_{\squarea}}$
+
+$\square \squarea$
+
+% the given dimensions were those of the inner square.
+% It is another interesting exercise to find how to get the outer square to the given dimensions
+% without writing the results of subtractions.
+
+\bye
+
