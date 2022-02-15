@@ -1,18 +1,42 @@
+% utf-8 é = c3 a9   1100 0011  1010 1001  ->  1110 1001  e9
+\catcode`^^c3=0
+\catcode`^^a9=11
+%\defé{\'e}
+\catcode`^^a7=11
+%\defç{\c c}
 \def\math{Math\'ematiques}
 \def\hg{Histoire G\'eo}
-\def\fran{Fran\c{c}ais}
-\def\apfran{AP Fran\c{c}ais}
+\def\fran{Fran\c cais}
+\def\apfran{AP Fran\c cais}
 %\def\++{\+\hfill}
 
 % https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
 \special{papersize=29.7cm,21cm}
 \pdfpageheight 21cm 
 \pdfpagewidth 29.7cm 
+\advance\hoffset by 1cm
+\advance\hoffset by -1in
+\advance\voffset by 1cm
+\advance\voffset by -1in
 
 \hsize=27.7cm
+\vsize=19cm
 
-\font\ss=cmss17 at 20pt
+\nopagenumbers
+
+\font\ss=cmss8 at 21pt
 \ss
+
+%\dimen0 = 18cm
+\dimen0 = \vsize
+\advance \dimen0 by -0.8pt
+\dimen1 = \hsize
+\advance \dimen1 by -0.4pt
+\divide \dimen1 by 5
+\advance \dimen1 by -0.4pt
+\dimen2 = \dimen0
+\divide \dimen2 by 9
+\dimen3 = \dimen2
 
 \halign{\hfil#\hfil&\hfil#\hfil&\hfil#\hfil&\hfil#\hfil&\hfil#\hfil\cr
 \cr
@@ -25,6 +49,101 @@
  Anglais&          EPS&               &             \fran&      EPS \cr
  \fran&            \fran&             &             \hg&        EPS \cr
  \hg&              Projet info num&   &             &           Allemand \cr}
+
+\vfil
+
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil LUNDI\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil MARDI\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil MERCREDI\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil JEUDI\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil VENDREDI\hfil}\vfil}\vrule height \dimen2%
+}}
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil [Vie de classe]\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \hg\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Latin\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Latin\hfil}\vfil}\vrule height \dimen2%
+}}
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Arts plastiques\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Technologie\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \fran\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Anglais\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Physique Chimie\hfil}\vfil}\vrule height \dimen2%
+}}
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Allemand\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \math\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil SVT\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \math\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \math\hfil}\vfil}\vrule height \dimen2%
+}}
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Musique\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Anglais\hfil}\vfil}\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Allemand\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \fran\hfil}\vfil}\vrule height \dimen2%
+}}
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+}}
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Anglais\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil EPS\hfil}\vfil}\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \fran\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil EPS\hfil}\vfil}\vrule height \dimen2%
+}}
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \fran\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \fran\hfil}\vfil}\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \hg\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil EPS\hfil}\vfil}\vrule height \dimen2%
+}}
+\hrule
+\vbox{
+\hbox to \hsize{%
+\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil \hg\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Projet info num\hfil}\vfil}\vrule height \dimen2%
+\hbox to \dimen1{}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil CHAMA\hfil}\vfil}\vrule height \dimen2%
+\vbox to \dimen2{\vfil\hbox to \dimen1{\hfil Allemand\hfil}\vfil}\vrule height \dimen2%
+}}
+\hrule
+
 
 
 \end
