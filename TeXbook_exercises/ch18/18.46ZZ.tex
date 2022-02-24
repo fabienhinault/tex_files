@@ -3,17 +3,40 @@
 $$
 \matrix{
 &&&&&&0&&\cr
-&&&&&&\downarrow&&\cr
-0 & \rightarrow & {\cal O}_C & \mathop{\rightarrow}\limits^\iota & E & \mathop{\rightarrow}\limits^\rho &
-  L & \rightarrow & 0 \cr
-& & \| & & \phantom{\phi} \downarrow \phi & & \phantom{\psi} \downarrow \psi & & \cr
-0 & \rightarrow & O_C & \rightarrow & \pi_*O_D & \mathop{\rightarrow}\limits^\delta &
-  R^1 f_* O_V(-D) & \rightarrow & 0 \cr
-&&&&&& \hbox to 0pt{\hss$\phantom{\theta_i \otimes \gamma^{-1}} \downarrow \theta_i \otimes \gamma^{-1}$\hss} &&\cr
-&&&&&& \hbox to 0pt{\hss$R^1f*(O_V(-iM))\otimes \gamma^{-1}$\hss} &&\cr
-&&&&&& \downarrow &&\cr
+&&&&&&\Big\downarrow&&\cr
+0 & \longrightarrow & {\cal O}_C & \mathop{\longrightarrow}\limits^\iota & {\cal E} & \mathop{\longrightarrow}\limits^\rho &
+ {\cal  L} & \longrightarrow & 0 \cr
+& & \Big\| & & \phantom{\phi} \Big\downarrow \phi & & \phantom{\psi} \Big\downarrow \psi & & \cr
+0 & \longrightarrow & {\cal O}_C & \longrightarrow & \pi_*{\cal O}_D & \mathop{\longrightarrow}\limits^\delta &
+  R^1 f_* {\cal O}_V(-D) & \longrightarrow & 0 \cr
+&&&&&& \hbox to 0pt{\hss$\phantom{\theta_i \otimes \gamma^{-1}} \Big\downarrow \theta_i \otimes \gamma^{-1}$\hss} &&\cr
+&&&&&& \hbox to 0pt{\hss$R^1f*\big({\cal O}_V(-iM)\big)\otimes \gamma^{-1}$\hss} &&\cr
+&&&&&& \Big\downarrow &&\cr
 &&&&&& 0 &&\cr
 }
 $$
+
+
+Answer
+
+$$\def\normalbaselines{\baselineskip20pt
+\lineskip3pt \lineskiplimit3pt }
+\def\mapright#1{\smash{
+\mathop{\longrightarrow}\limits^{#1}}}
+\def\mapdown#1{\Big\downarrow
+\rlap{$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+\matrix{&&&&&&0\cr
+&&&&&&\mapdown{}\cr
+0&\mapright{}&{\cal O}_C&\mapright\iota&
+\cal E&\mapright\rho&\cal L&\mapright{}&0\cr
+&&\Big\Vert&&\mapdown\phi&&\mapdown\psi\cr
+0&\mapright{}&{\cal O}_C&\mapright{}&
+\pi_*{\cal O}_D&\mapright\delta&
+R^1f_*{\cal O}_V(-D)&\mapright{}&0\cr
+&&&&&&\mapdown{\theta_i\otimes\gamma^{-1}}\cr
+&&&&&&\hidewidth R^1f_*\bigl({\cal O}
+_V(-iM)\bigr)\otimes\gamma^{-1}\hidewidth\cr
+&&&&&&\mapdown{}\cr
+&&&&&&0\cr}$$
 
 \bye
