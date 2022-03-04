@@ -1,0 +1,30 @@
+\def\dollaramount{ \count1=\count0
+\divide\count1 by 100
+\count2=-\count1
+\multiply\count2 by 100
+\advance\count2 by \count0
+\$\the\count1.\the\count2}
+\count0=299
+
+
+coucou \dollaramount\ coucou
+
+\count0=201
+
+coucou \dollaramount\ coucou
+
+Answer:
+
+\def\dollaramount{\count2=\count0 \divide\count2 by100
+\$\number\count2.%
+\multiply\count2 by-100 \advance\count2 by\count0
+\ifnum \count2<10 0\fi
+\number\count2 }
+
+
+coucou \dollaramount\ coucou
+
+
+\bye
+
+

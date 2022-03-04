@@ -1,0 +1,21 @@
+\def\category#1{\ifcase\catcode#1 escape \or beginning \or end \or math shift \or
+tab \or end of line \or parameter \or superscript \or subscript \or ignored \or
+space \or letter \or other \or active \or comment \or invalid \fi}
+
+%space?
+\category`\
+
+Answer
+
+\def\category#1{\ifcase\catcode`#1
+escape\or begingroup\or endgroup\or math\or
+align\or endline\or parameter\or superscript\or
+subscript\or ignored\or space\or letter\or
+otherchar\or active\or comment\or invalid\fi}
+
+\category\\
+
+
+\bye
+
+
