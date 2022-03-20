@@ -1,0 +1,50 @@
+\def\a{}
+\def\b{**}
+\def\c{True}
+
+\if\a\b
+Expected
+\else
+Not expected
+\fi
+
+\ifcat\a\b
+Expected
+\else
+Not expected
+\fi
+
+\ifx\a\b
+Not expected
+\else
+Expected
+\fi
+
+\if\c
+Not expected
+\else
+Expected
+\fi
+
+\ifcat\c
+Expected
+\else
+Not expected
+\fi
+
+\ifx\ifx\ifx
+Expected
+\else
+Not expected
+\fi
+
+\if\ifx\a\b\c\else\if\a\b\c\fi\fi
+Not expected
+\else
+Expected
+\fi
+
+\bye
+
+
+
