@@ -1,0 +1,15 @@
+\line{Alpha \leaders\hbox{\TeX}\hfill Omega.}
+
+%\leaders\hbox{\vbox to 48pt{\leaders\hbox{\TeX}\vfill}}\hfill 
+%leaders not followed by proper glue
+
+\line{Alpha \leaders\hbox{\vbox to 48pt{\leaders\vbox{\TeX}\vfill}}\hfill Omega.}
+\line{Alpha \leaders\hbox{\vbox to 48pt{\leaders\hbox{\TeX}\vfill}}\hfill Omega.}
+
+Answer:
+$$\hbox to 2.5in{\cleaders
+\vbox to .5in{\cleaders\hbox{\TeX}\vfil}\hfil}$$
+
+
+\bye
+
