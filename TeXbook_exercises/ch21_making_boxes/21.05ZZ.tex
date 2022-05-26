@@ -1,0 +1,14 @@
+\def\leaderfill{\leaders\hbox to 1em{\hss.\hss\hss\hss\hss.\hss}\hfill}
+
+\line{Alpha\leaderfill Omega}
+\line{The Beginning\leaderfill The Ending}
+
+Answer:
+
+\def\leaderfill{\kern-0.3em\leaders\hbox to 1em{\hss.\hss}%
+\hskip0.6em plus1fill \kern-0.3em }
+
+\line{Alpha\leaderfill Omega}
+\line{The Beginning\leaderfill The Ending}
+
+\bye

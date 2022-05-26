@@ -1,0 +1,72 @@
+\centerline{\vbox{\hsize=3in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et 
+}}
+\vskip 1in
+\vbox{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et 
+}
+
+
+\vskip 1in
+\vbox{\hfil\vbox{\hsize=3in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et 
+}\hfil}
+
+\vskip 1in
+
+\vbox{\hsize=3in Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et}
+
+\vskip 1in
+
+\setbox4=\vbox{\hsize 23pc \noindent \strut
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem \strut}
+
+$$
+\copy4
+$$
+
+$$
+\vbox{
+  \hrule
+  \hbox{\vrule\hskip 3pt\vbox{\vskip 3pt\copy4\vskip 3pt}\hskip 3pt\vrule}
+  \hrule}
+$$
+
+\def\boxit#1{\vbox{\hrule\hbox{\vrule\hskip 3pt\vbox{\vskip 3pt #1 \vskip 3pt}\hskip 3pt\vrule}\hrule}}
+
+%Answer
+%\def\boxit#1{\vbox{\hrule\hbox{\vrule\kern3pt
+%      \vbox{\kern3pt#1\kern3pt}\kern3pt\vrule}\hrule}}
+
+$$
+\boxit{\copy4}
+$$
+$$
+\boxit{\boxit{\copy4}}
+$$
+
+
+\vbox{\hsize 23pc \noindent \strut
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore etLorem \strut}
+$$
+
+\bye

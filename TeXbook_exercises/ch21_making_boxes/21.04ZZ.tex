@@ -1,0 +1,18 @@
+\def\\{$\backslash$}
+
+Suppose that a 10 pt-wide box is to fill 38 pt of space starting 91 pt from the
+left of its enclosing box. How many copies of the box will be produced by \\leaders,
+\\cleaders, and \\xleaders? Where will the boxes be positioned, relative to the left
+edge of the enclosing box, in each of the three cases?
+
+Only 2 boxes will be produced with \\leaders, 3 with \\cleaders or \\xleaders.
+
+Answer:
+
+\\leaders: two boxes starting at 100 pt, 110 pt.
+
+\\cleaders: three boxes starting at 95 pt, 105 pt, 115 pt.
+
+\\xleaders: three boxes starting at 93 pt, 105 pt, 117 pt.
+\bye
+
