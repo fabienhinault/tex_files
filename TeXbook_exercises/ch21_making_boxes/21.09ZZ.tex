@@ -1,4 +1,17 @@
-$$\hbox{\cleaders
-\vbox to 120pt{\cleaders\hbox{\struts I must not talk in class \struts}\vfil}\hfil}$$
+$$\hbox to 6 in{\cleaders
+\vbox to 120pt{\cleaders\hbox{\strut I must not talk in class \strut}\vfil}\hfil}$$
+
+$$\hbox to 2.5in{\cleaders
+\vbox to .5in{\cleaders\hbox{\TeX}\vfil}\hfil}$$
+
+Answer:
+
+\vfill\eject
+
+\setbox0=\hbox{\strut I must not talk in class.}
+\null\cleaders\copy0\vskip600pt\vfill\eject % 50 times on page 1;
+\null\cleaders\box0\vskip600pt\bye % 50 more on page 2.
+
+
 
 \bye
