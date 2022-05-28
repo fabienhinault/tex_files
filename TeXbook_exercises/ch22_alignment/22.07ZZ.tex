@@ -1,0 +1,25 @@
+\def\welshverb#1=#2{{\bf#1} = #2}
+\tabskip=0sp plus 1fill
+\halign to \hsize{\welshverb#\hfil&\welshverb#\hfil&\welshverb#\hfil\cr
+mae hi=she is&ydy hi=is she&roedd hi=she was\cr
+mae hi=she is&ydy hi=is she&roedd hi=she was\cr
+mae hi=she is&ydy hi=is she&roedd hi=she was\cr
+maen nhw = they are&ydyn nhw = are they&roedden nhw = they were\cr
+}
+
+[with a quick look at the answer]
+
+Answer:
+
+
+$$
+\def\welshverb#1={{\bf#1} = }
+\halign to\hsize{\welshverb#\hfil\tabskip=1em plus1em&
+\welshverb#\hfil&\welshverb#\hfil\tabskip=0pt\cr
+mae hi=she is&ydy hi=is she&roedd hi=she was\cr
+maen nhw = they are&ydyn nhw = are they&roedden nhw = they were\cr
+}
+$$
+
+\bye 
+
