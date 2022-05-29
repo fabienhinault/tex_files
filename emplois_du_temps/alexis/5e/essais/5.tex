@@ -1,0 +1,53 @@
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
+\special{papersize=29.7cm,21cm}
+\pdfpageheight 21cm 
+\pdfpagewidth 29.7cm 
+\advance\hoffset by 1cm
+\advance\hoffset by -1in
+\advance\voffset by 1cm
+\advance\voffset by -1in
+\hsize=27.7cm
+\vsize=19cm
+\nopagenumbers
+\font\ss=cmss8 at 20pt
+\ss
+\baselineskip=\vsize
+\divide\baselineskip by 10
+\dimen0=\baselineskip
+\divide\dimen0 by 120
+\dimen1=\dimen0
+\multiply\dimen0 by 85
+\multiply\dimen1 by 35
+\setbox\strutbox=\hbox{\vrule height\dimen0 depth\dimen1 width0pt}
+\def\math{Math\'ematiques}
+\def\hg{Histoire G\'eo}
+\def\fran{Fran\c cais}
+\def\apfran{AP Fran\c cais}
+%\def\strike#1{$\overline{\overline{\smash{\hbox{#1}}}}$}
+\dimen0=0.5ex
+\dimen1=\dimen0
+\advance \dimen1 by 0.6pt
+\def\strike#1{{\setbox0=\hbox{#1}\copy0\kern-\wd0{\leaders\hrule height\dimen1 depth-\dimen0 \hskip \wd0}}}
+\centerline{
+\vbox{\offinterlineskip
+\hrule
+\halign{&\vrule#& \strut\thinspace\hfil#\hfil\thinspace\cr
+height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+& LUNDI&&            MARDI&&             MERCREDI&&     JEUDI&&     VENDREDI &\cr
+height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+\noalign{\hrule}
+height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
+& &&                 [Vie de classe]&&   \hg&&          Latin&&     Latin &\cr
+& Arts plastiques&&  Technologies&&      \fran&&        Anglais&&   Physique Chimie&\cr
+& Allemand&&         \math&&             SVT&&          \math&&     \math&\cr
+& Musique&&          Anglais&&           &&             Allemand&&  \fran&\cr
+&        &&                 &&           &&                     &&        &\cr
+& Anglais&&          EPS&&               &&             \fran&&      EPS&\cr
+& \fran&&            \fran&&             &&             \hg&&        EPS&\cr
+& \hg&&              Projet info num&&   &&             \strike{CHAMA}&&Allemand&\cr
+height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr}
+\hrule}
+}
+
+\bye
+
