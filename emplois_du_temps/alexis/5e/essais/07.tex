@@ -1,0 +1,44 @@
+
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
+\special{papersize=29.7cm,21cm}
+\pdfpageheight 21cm 
+\pdfpagewidth 29.7cm 
+\hoffset=1cm
+\advance\hoffset by -1in
+\voffset=1cm
+\advance\voffset by -1in
+
+\hsize=27.7cm
+\vsize=19cm
+
+\nopagenumbers
+
+\font\ss=cmss8 at 21pt
+\ss
+\font\8=cmss8
+% a strut for 21pt characters has a height of (21*1.2)/12*8.5 = 17,85pt
+% and a depth of (21*1.2)/12*3.5 = 7.35pt
+% or 21/10*(7.5+1)...
+\def\math{Math\'ematiques}
+\def\hg{Histoire G\'eo}
+\def\fran{Fran\c cais}
+\def\apfran{AP Fran\c cais}
+\def\pc{Physique Chimie}
+\def\h#1 #2 {\vbox to 17.85pt{\hbox{\8#1 }\vss\hbox{\lower7.35pt\hbox{\8#2 }}}}
+\nopagenumbers
+\baselineskip=\vsize
+\divide\baselineskip by 9 
+\settabs\+{\800:00\quad}&\pc&\pc&\pc&\pc&\pc\cr
+\+              & LUNDI&            MARDI&             MERCREDI&     JEUDI&     VENDREDI\cr
+\+\h08:25 09:20 &&                 [Vie de classe]&   \hg&          Latin&     Latin\cr
+\+\h09:23 10:18 & Arts plastiques&  Technologies&      \fran&        Anglais&   Physique Chimie\cr
+\+\h10:33 11:28 & Allemand&         \math&             SVT&          \math&     \math\cr
+\+\h11:35 12:30 & Musique&          Anglais&           &             Allemand&  \fran\cr
+\vskip 1em
+\+\h14:00 14:55 & Anglais&          EPS&               &             \fran&      EPS\cr
+\+\h14:58 15:53 & \fran&            \fran&             &             \hg&        EPS\cr
+\+\h16:10 17:05 & \hg&              Projet info num&   &             &           Allemand\cr
+
+\bye
+%%%%%
+

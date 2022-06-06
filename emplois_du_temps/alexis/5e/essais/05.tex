@@ -1,0 +1,40 @@
+
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
+\special{papersize=29.7cm,21cm}
+\pdfpageheight 21cm 
+\pdfpagewidth 29.7cm 
+\advance\hoffset by 1cm
+\advance\hoffset by -1in
+\advance\voffset by 1cm
+\advance\voffset by -1in
+
+\hsize=27.7cm
+\vsize=19cm
+
+\nopagenumbers
+
+\font\ss=cmss8 at 21pt
+\ss
+
+
+\def\math{Math\'ematiques}
+\def\hg{Histoire G\'eo}
+\def\fran{Fran\c cais}
+\def\apfran{AP Fran\c cais}
+\nopagenumbers
+\baselineskip=\vsize
+\divide\baselineskip by 9 
+\settabs 5 \columns
+\+ LUNDI&            MARDI&             MERCREDI&     JEUDI&     VENDREDI \cr
+\+ &                 [Vie de classe]&   \hg&          Latin&     Latin \cr
+\+ Arts plastiques&  Technologies&      \fran&        Anglais&   Physique Chimie \cr
+\+ Allemand&         \math&             SVT&          \math&     \math \cr
+\+ Musique&          Anglais&           &             Allemand&  \fran \cr
+\+ \cr
+\+ Anglais&          EPS&               &             \fran&      EPS \cr
+\+ \fran&            \fran&             &             \hg&        EPS \cr
+\+ \hg&              Projet info num&   &             &           Allemand \cr
+
+\bye
+
+
