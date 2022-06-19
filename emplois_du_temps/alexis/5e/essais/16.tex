@@ -1,0 +1,62 @@
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
+\special{papersize=29.7cm,21cm}
+\pdfpageheight 21cm 
+\pdfpagewidth 29.7cm 
+\advance\hoffset by 1cm
+\advance\hoffset by -1in
+\advance\voffset by 1cm
+\advance\voffset by -1in
+\hsize=27.7cm
+\vsize=19cm
+\nopagenumbers
+\font\ss=cs-qhvr at 21pt
+\ss
+\font\8=cs-qhvr at 8 pt
+\def\math{Math\'ematiques}
+\def\hg{Histoire G\'eo}
+\def\fran{Fran\c cais}
+\def\apfran{AP Fran\c cais}
+% set dimen0 to a 5th of (hsize - the place for hours)
+\dimen0=\hsize
+\setbox0=\hbox{\vrule\800:00 \vrule}
+\advance\dimen0 by -\wd0
+\divide\dimen0 by 5
+\advance\dimen0 by -0.4pt
+% a strut for 21pt characters has a height of (21*1.2)/12*8.5 = 17,85pt
+% and a depth of (21*1.2)/12*3.5 = 7.35pt
+% or 21/10*(7.5+1)...
+\def\h#1 #2 {\vbox to 17.85pt{\hbox{\8#1 }\vss\hbox{\lower7.35pt\hbox{\8#2 }}}}
+\offinterlineskip
+% compute the strut's height and depth
+\dimen1=\vsize
+\divide\dimen1 by 9 % height + depth
+\advance\dimen1 by -21pt
+\divide\dimen1 by 2
+\dimen2=\dimen1
+\advance\dimen1 by 15.75pt %height
+\advance\dimen2 by 5.25pt %depth
+\def\strut{\hbox{\vrule height\dimen1 depth\dimen2 width0pt}} 
+\def\d #1 {\omit\hfil#1\hfil}
+\halign to \hsize{\vrule#&\8#&&\vrule#&\strut\hbox to \dimen0{\hfil#\hfil}\cr
+\omit&\omit&\omit&  \d LUNDI &\omit& \d MARDI &\omit& \d MERCREDI &\omit&\d JEUDI &\omit&\d VENDREDI &\omit\cr
+\noalign{\vskip3pt\hrule}
+&\h08:25 09:20 &&&&              [Vie de classe]&&   \hg&&          Latin&&     Latin&\cr
+\noalign{\hrule}
+&\h09:23 10:18 &&Arts plastiques&&  Technologies&&      \fran&&        Anglais&&   Physique Chimie&\cr
+\noalign{\hrule}
+&\h10:33 11:28 &&Allemand&&         \math&&             SVT&&          \math&&     \math&\cr
+\noalign{\hrule}
+&\h11:35 12:30 &&Musique&&          Anglais&&           &&             Allemand&&  \fran&\cr
+\noalign{\hrule}
+&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&\h14:00 14:55 &&Anglais&&          EPS&&               &&             \fran&&      EPS&\cr
+\noalign{\hrule}
+&\h14:58 15:53 &&\fran&&            \fran&&             &&             \hg&&        EPS&\cr
+\noalign{\hrule}
+&\h16:10 17:05 &&\hg&&              Projet info num&&   &&             &&           Allemand&\cr}
+\hrule
+
+\bye
+
+
