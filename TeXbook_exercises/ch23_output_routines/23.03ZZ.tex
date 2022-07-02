@@ -1,4 +1,11 @@
-\footline{\hss\tenrm -- \folio\ --\hss}
+%\output={\ifodd\pageno\plainoutput\else\evenoutput\fi}
+%\def\evenoutput{\shipout\vbox{\makeheadline\emptypagebody\makefootline}%
+%\advancepageno
+%\unvbox255 \penalty\outputpenalty}
+%\def\emptypagebody={\vskip\vsize}
+\output={\plainoutput\blankpageoutput}
+\def\blankpageoutput{\shipout\vbox{\makeheadline
+\vbox to\vsize{}\makefootline}\advancepageno}
 lorem ipsum
 
 Qu'est-ce que le Lorem Ipsum?
@@ -65,6 +72,5 @@ Donec ut elementum orci. Vivamus arcu enim, efficitur quis orci et, efficitur sa
 Etiam ut hendrerit risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed volutpat dui. Pellentesque velit mauris, porta vel velit vitae, elementum posuere leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse malesuada mi vitae imperdiet finibus. Morbi commodo ex vitae sem lacinia dictum. Nullam eget nunc vitae est dignissim accumsan. Cras tincidunt est quis magna pretium ultricies. Nunc sodales urna sed eros ornare, eu fringilla elit elementum. Vivamus auctor mi ut sollicitudin sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer pretium quam enim, viverra feugiat nisi ultricies eu.
 
 Nullam convallis massa pharetra lectus tempor, id porta urna varius. Praesent bibendum convallis consectetur. Pellentesque vel felis quis ligula efficitur ullamcorper. Vivamus varius elit eu magna consectetur tempus. Aliquam nec neque varius, pretium ex eget, vestibulum lectus. Aenean ac interdum nunc. Suspendisse potenti. Donec ornare ipsum vitae sapien fermentum, et interdum massa interdum. Nam dictum, metus vitae elementum elementum, massa lacus tincidunt tortor, egestas viverra sapien ligula sit amet nibh. Nunc sed lacus dictum, dignissim neque nec, venenatis ipsum. Integer hendrerit lacus id dapibus aliquet. Ut a enim in diam placerat volutpat quis nec augue. Fusce sagittis sollicitudin rhoncus
+
 \bye
-
-
