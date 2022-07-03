@@ -1,0 +1,13 @@
+% too many spaces after the integer constant to have
+% 24\space\space\[ considered as a <normal integer> in
+% <factor> -> <normal integer>
+% <normal dimen> ->  <factor> <unit of measure>
+% <unsigned dimen> -> <normal dimen>
+% <dimen> -> <optional signs> <unsigned dimen>
+\dimen0=24\space\space pt
+
+% NO ERROR!
+% it is because of
+% <unit of measure> -> <optional spaces> <internal unit>
+
+\bye
