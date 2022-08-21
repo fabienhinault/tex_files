@@ -1,0 +1,17 @@
+No difference, actually, yes there is.
+\baselineskip=12pt plus2pt minus2pt
+\skip0=- -\baselineskip
+\showthe\skip0
+\skip0=1\baselineskip
+\showthe\skip0
+
+\obeylines
+<internal glue> -> <glue parameter>
+<glue> -> <optional signs><internal glue>
+<glue> ->  <dimen><stretch><shrink>
+<dimen> -> <optional signs><unsigned dimen>
+<unsigned dimen> -> <normal dimen>
+<normal dimen> -> <factor><unit of measure>
+<unit of measure> -> <optional spaces><internal unit>
+<internal unit> -> <internal glue>
+\bye 
