@@ -31,12 +31,12 @@
 \def\h#1 #2 {\vbox to 17.85pt{\hbox{\8#1 }\vss\hbox{\lower7.35pt\hbox{\8#2 }}}}
 % compute the strut's height and depth
 \dimen1=\vsize
-\divide\dimen1 by 9 % height + depth
+\divide\dimen1 by 10 % height + depth
 \advance\dimen1 by -21pt
-\divide\dimen1 by 2
+\divide\dimen1 by 2 % here dimen1 equals half of the space to put between 2 lines to fill the page.
 \dimen2=\dimen1
-\advance\dimen1 by 15.75pt %height
-\advance\dimen2 by 5.25pt %depth
+\advance\dimen1 by 15.75pt %height = 21/10*7.5
+\advance\dimen2 by 5.25pt %depth = 21/10*2.5
 \def\strut{\hbox{\vrule height\dimen1 depth\dimen2 width0pt}} 
 \def\d #1 {\omit\hfil#1\hfil}
 \def\vr{\hrule \leaders\vrule\vfil \hbox{\strut\vrule} \leaders\vrule\vfil }
@@ -44,8 +44,8 @@
 \def\vhole{\hrule \vfil \strut \vfil}
 \def\vmidhole{\hrule\vskip20pt}
 \def\cell#1{\hrule \vfil \hbox to \dimen0{\strut\hfil#1\hfil} \vfil}
-\def\vfull{\vbox to \vsize{\vskip18pt \vr\vr\vr\vr\vmidhole\vr\vr\vr \hrule}}
-\def\head#1{\hbox to \dimen0{\hfil#1\hfil} \vskip3pt}
+\def\vfull{\vbox to \vsize{\vskip18pt \vr\vr\vr\vr\vmidhole\vr\vr\vr\vr \hrule}}
+\def\head#1{\vbox to 18pt{\hbox to \dimen0{\hfil#1\hfil}\vfil}}
 \offinterlineskip
 \hbox{
 \vbox to \vsize{%
@@ -81,6 +81,10 @@
 \h16:10 17:05 
 \vfil
 \vskip0.4pt
+\vfil
+\h 17:05 18:00 
+\vfil
+\vskip0.4pt
 }%
 \vfull%
 \vbox to \vsize{%
@@ -93,6 +97,7 @@
 \cell{\fran}
 \cell{\hg}
 \cell{LCA Latin}
+\cell{}
 \hrule
 }%
 \vfull%
@@ -106,6 +111,7 @@
 \cell{Allemand}
 \cell{\fran}
 \cell{Anglais}
+\cell{}
 \hrule
 }%
 \vfull%
@@ -116,6 +122,7 @@
 \cell{Arts plastiques}
 \cell{\maths}
 \vmidhole
+\cell{}
 \cell{}
 \cell{}
 \cell{}
@@ -132,6 +139,7 @@
 \cell{{\vingt Physique Chimie}}
 \cell{\fran}
 \cell{Webradio}
+\cell{Webradio}
 \hrule
 }%
 \vfull%
@@ -145,6 +153,7 @@
 \cell{{\vingt Physique Chimie}}
 \cell{\hg}
 \cell{LCA Latin}
+\cell{}
 \hrule
 }%
 \vfull%
@@ -184,6 +193,10 @@
 \h16:10 17:05 
 \vfil
 \vskip0.4pt
+\vfil
+\h 17:05 18:00 
+\vfil
+\vskip0.4pt
 }%
 \vfull%
 \vbox to \vsize{%
@@ -196,6 +209,7 @@
 \cell{\fran}
 \cell{\hg}
 \cell{LCA Latin}
+\cell{}
 \hrule
 }%
 \vfull%
@@ -209,6 +223,7 @@
 \cell{Anglais}
 \cell{Allemand}
 \cell{{\vingt Physique Chimie}}
+\cell{}
 \hrule
 }%
 \vfull%
@@ -219,6 +234,7 @@
 \cell{Arts plastiques}
 \cell{\maths}
 \vmidhole
+\cell{}
 \cell{}
 \cell{}
 \cell{}
@@ -235,6 +251,7 @@
 \cell{{\vingt Physique Chimie}}
 \cell{\fran}
 \cell{Webradio}
+\cell{Webradio}
 \hrule
 }%
 \vfull%
@@ -248,6 +265,7 @@
 \cell{\math}
 \cell{\hg}
 \cell{LCA Latin}
+\cell{}
 \hrule
 }%
 \vfull%
