@@ -1,0 +1,62 @@
+
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
+\special{papersize=29.7cm,21cm}
+\pdfpageheight 21cm 
+\pdfpagewidth 29.7cm 
+\advance\hoffset by 1cm
+\advance\hoffset by -1in
+\advance\voffset by 1cm
+\advance\voffset by -1in
+\output={}
+
+\hsize=27.7cm
+\vsize=19cm
+\baselineskip=\vsize
+\divide\baselineskip by 9 
+
+\nopagenumbers
+
+\font\ss=cs-qhvr at 21pt
+\ss
+
+\def\math{Math\'ematiques}
+\def\maths{\math}
+\def\hg{Histoire G\'eo}
+\def\fran{Fran\c cais}
+\def\apfran{AP Fran\c cais}
+\def\pc{Physique\hskip 0.15ex Chimie}
+\dimen0=\hsize
+\divide\dimen0 by 5
+
+
+\halign to \hsize{&\hbox to \dimen0{\hfil#\hfil}\cr
+LUNDI&          MARDI&          MERCREDI&           JEUDI&      VENDREDI\cr
+\noalign{\hrule\vskip1em}
+&               EPS&            Anglais&            &           \cr
+\math&          EPS&            Technologie&        \maths&     \fran\cr
+SVT&            Musique&        Arts plastiques&    Allemand&   Anglais\cr
+Allemand&       \maths&         \maths&             EPS&        Musique\cr
+\noalign{\smallskip}
+\fran&          Allemand&       &                   \pc&        \pc\cr
+\hg&            \fran&          &                   \fran&      \hg\cr
+LCA Latin&      Anglais&        &                   Webradio&   LCA Latin\cr
+&               &               &                   [Webradio]&    \cr}
+
+
+\halign to \hsize{&\hbox to \dimen0{\hfil#\hfil}\cr
+LUNDI&          MARDI&          MERCREDI&           JEUDI&      VENDREDI\cr
+\noalign{\hrule\vskip1em}
+&               EPS&            Anglais&            &           \fran\cr
+\math&          EPS&            Technologie&        \maths&     \fran\cr
+Technologie&    Musique&        Arts plastiques&    Allemand&   Anglais\cr
+Allemand&       \maths&         \maths&             EPS&        Musique\cr
+\noalign{\vskip.5em}
+\fran&          Allemand&       &                   \pc&        \math\cr
+\hg&            \pc&            &                   \fran&      \hg\cr
+LCA Latin&      Anglais&        &                   Webradio&   LCA Latin\cr
+&               &               &                   [Webradio]&    \cr}
+
+
+\bye
+
+
