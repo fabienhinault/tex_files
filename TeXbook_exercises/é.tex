@@ -1,0 +1,58 @@
+% utf-8 é = c3 a9   1100 0011  1010 1001  ->  1110 1001  e9
+%                          --    -------
+\catcode`^^c3=0
+\defÉ{{\'E}}%    c9   c3 89
+\defà{{\`a}}%    e0   c3 a0
+\defâ{{\^a}}%    e2   c3 a2
+\defæ{{\ae}}%    e6   c3 a6
+\defç{{\c c}}%   e7   c3 a7
+\defè{{\`e}}%    e8   c3 a8
+\defé{{\'e}}%    e9   c3 a9
+\defê{{\^e}}%    ee   c3 aa
+\defë{{\"e}}%    eb   c3 ab
+\defî{{\^\i}}%   ee   c3 ae  
+\defô{{\^o}}%    f4   c3 b4
+\defù{{\`u}}%    f9   c3 b9
+\defû{{\^u}}%    fb   c3 bb
+
+% utf-8 œ = c5 93   1100 1001  1001 0011  ->  0000 0010  0101 0011   02 53 
+%                     aa aaaa    bb bbbb           aaaa  aabb bbbb
+\catcode`^^c5=0
+\defœ{{\oe}}% 02 53   c5 93
+% utf-8 é = c3 a9   1100 0011  1010 1001  ->  1110 1001  e9
+
+% utf-8 € = e2 82 ac
+%\catcode`^^e2=0
+%\catcode`^^82=11
+%\catcode`^^ac=11
+%\def€{=\kern -.56em C}
+
+€
+
+à
+
+æ
+
+â
+
+è
+
+î
+
+œ
+
+ô
+
+û
+
+
+é
+
+é
+
+ç
+
+\bye
+
+
+
