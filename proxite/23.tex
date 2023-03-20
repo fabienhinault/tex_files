@@ -1,0 +1,59 @@
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
+\special{papersize=29.7cm,21cm}
+\pdfpageheight 21cm 
+\pdfpagewidth 29.7cm 
+\advance\hoffset by 1cm
+\advance\hoffset by -1in
+\advance\voffset by 1cm
+\advance\voffset by -1in
+\hsize=27.7cm
+\vsize=19cm
+\nopagenumbers
+\font\ss=cmss8 at 21pt
+\ss
+\font\m=cmmi10 at 21pt
+\font\8=cmss8
+% set dimen0 to 1/18  of hsize
+\dimen0=\hsize
+\divide\dimen0 by 19
+\advance\dimen0 by -0.4pt
+% a strut for 21pt characters has a height of (21*1.2)/12*8.5 = 17,85pt
+% and a depth of (21*1.2)/12*3.5 = 7.35pt
+% or 21/10*(7.5+1)...
+\def\h#1 #2 {\vbox to 17.85pt{\hbox{\8#1 }\vss\hbox{\lower7.35pt\hbox{\8#2 }}}}
+% compute the strut's height and depth
+\dimen1=\vsize
+\divide\dimen1 by 11 % height + depth
+\advance\dimen1 by -21pt
+\divide\dimen1 by 2
+\dimen2=\dimen1
+\advance\dimen1 by 15.75pt %height
+\advance\dimen2 by 5.25pt %depth
+\def\strut{\hbox{\vrule height\dimen1 depth\dimen2 width0pt}} 
+\offinterlineskip
+\halign to \hsize{&\vrule#&\strut\hbox to \dimen0{\hfil#\hfil}\cr
+\noalign{\hrule}
+& &&8&&18&&1&&9&&5&&12&&3&&17&&11&&2&&16&&13&&4&&15&&6&&14&&7&&10&\cr
+\noalign{\hrule}
+&9&&X&&9&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&5&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&7&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&3&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&2&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&6&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&4&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&8&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+&1&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&\cr
+\noalign{\hrule}
+}
+\bye
+
+
