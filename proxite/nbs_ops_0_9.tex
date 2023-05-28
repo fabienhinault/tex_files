@@ -1,0 +1,80 @@
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex
+\special{papersize=21cm, 29.7cm}
+\magnification=\magstep2
+\pdfpageheight 29.7true cm
+\pdfpagewidth 21true cm
+\baselineskip=1 true cm
+\advance\hoffset by 1true cm
+\advance\hoffset by -1 true in
+\advance\voffset by 1 true cm
+\advance\voffset by -1 true in
+\output={}
+\hsize=19 true cm
+\vsize=27.7 true cm
+\nopagenumbers
+\noindent
+\def\add{$\ldots + \ldots = \dots$}
+\def\sous{$\ldots - \ldots = \dots$}
+\def\a#1#2#3{$#1 ; #2 ; #3$&\add&\add&\sous&\sous}
+\def\b#1#2{$#1 ; #1 ; #2$&\add&\sous}
+\settabs 5 \columns
+\+\a{6}{1}{7}\cr
+\+\a{7}{1}{8}\cr
+\+\a{5}{0}{5}\cr
+\+\a{9}{1}{10}\cr
+\+\a{5}{1}{6}\cr
+\+\a{3}{2}{5}\cr
+\+\a{7}{3}{10}\cr
+\+\a{8}{7}{15}\cr
+\+\a{7}{6}{13}\cr
+\+\a{6}{3}{9}\cr
+\+\b{1}{2}\cr
+\+\a{4}{3}{7}\cr
+\+\a{4}{0}{4}\cr
+\+\b{5}{10}\cr
+\+\a{2}{1}{3}\cr
+\+\a{2}{0}{2}\cr
+\+\a{9}{7}{16}\cr
+\+\a{9}{0}{9}\cr
+\+\a{7}{5}{12}\cr
+\+\a{6}{5}{11}\cr
+\+\b{8}{16}\cr
+\+\a{7}{0}{7}\cr
+\+\a{4}{2}{6}\cr
+\+\a{8}{4}{12}\cr
+\+\a{9}{6}{15}\cr
+\+\b{4}{8}\cr
+\+\a{1}{0}{1}\cr
+\+\a{5}{4}{9}\cr
+\+\a{8}{0}{8}\cr
+\+\a{6}{4}{10}\cr
+\+\a{9}{8}{17}\cr
+\+\a{9}{5}{14}\cr
+\+\a{8}{1}{9}\cr
+\+\a{3}{1}{4}\cr
+\+\b{9}{18}\cr
+\+\a{8}{3}{11}\cr
+\+\a{5}{2}{7}\cr
+\+\a{5}{3}{8}\cr
+\+\a{4}{1}{5}\cr
+\+\a{6}{2}{8}\cr
+\+\a{8}{2}{10}\cr
+\+\a{9}{3}{12}\cr
+\+\a{7}{4}{11}\cr
+\+\b{7}{14}\cr
+\+\b{0}{0}\cr
+\+\a{8}{6}{14}\cr
+\+\a{8}{5}{13}\cr
+\+\a{9}{2}{11}\cr
+\+\a{9}{4}{13}\cr
+\+\b{3}{6}\cr
+\+\a{7}{2}{9}\cr
+\+\b{6}{12}\cr
+\+\b{2}{4}\cr
+\+\a{6}{0}{6}\cr
+\+\a{3}{0}{3}\cr
+
+
+\bye
+
+
