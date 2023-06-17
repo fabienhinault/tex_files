@@ -1,58 +1,116 @@
 \documentclass{article}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,decorations.pathmorphing,backgrounds,positioning,fit,petri}
-
+\usepackage[a4paper, margin=15mm]{geometry}
+\usepackage{latexsym}
+\def\upstrut{\vrule height8.5pt width0pt}
+\def\qrq{\quad\vrule\quad}
+\def\transpositions{\noindent\begin{tikzpicture}
+  \udt
+  \draw [->] (2haut) to (1bas);
+  \draw [->] (1haut) to (2bas);
+  \draw [->] (3haut) to (3bas);
+\end{tikzpicture}
+\qrq
+\begin{tikzpicture}
+  \udt
+  \draw [->] (1haut) to (1bas);
+  \draw [->] (3haut) to (2bas);
+  \draw [->] (2haut) to (3bas);
+\end{tikzpicture}
+\qrq
+\begin{tikzpicture}
+  \udt
+  \draw [->] (3haut) to (1bas);
+  \draw [->] (2haut) to (2bas);
+  \draw [->] (1haut) to (3bas);
+\end{tikzpicture}
+\qrq
+\begin{tikzpicture}
+  \udt
+  \draw [->] (2haut) to (1bas);
+  \draw [->] (3haut) to (2bas);
+  \draw [->] (1haut) to (3bas);
+\end{tikzpicture}
+\hrule
+\noindent
+\begin{tikzpicture}
+  \udt
+  \draw [->] (3haut) to (1bas);
+  \draw [->] (1haut) to (2bas);
+  \draw [->] (2haut) to (3bas);
+\end{tikzpicture}
+\qrq
+\begin{tikzpicture}
+  \udt
+  \draw [->] (1haut) to (1bas);
+  \draw [->] (2haut) to (2bas);
+  \draw [->] (3haut) to (3bas);
+\end{tikzpicture}
+}
+\def\udt{\node (1haut){\upstrut1};
+  \node (2haut)[right=of 1haut]{\upstrut2} ;
+  \node (3haut)[right=of 2haut]{\upstrut3} ;
+  \node (1bas)[below=of 1haut]{\strut\ldots};
+  \node (2bas)[below=of 2haut]{\strut\ldots};
+  \node (3bas)[below=of 3haut]{\strut\ldots};}
 \begin{document}
+\noindent
+\transpositions
 
-\begin{tikzpicture}
-  [distance=1em]
-  \node (un){1};
-  \node (+)[right=of un]{+} ;
-  \node (deux)[right=of +]{2} ;
-  \node (egal)[right=of deux]{=} ;
-  \node (3)[right=of egal]{3} ;
-  \draw [<->] (un) to [out=90,in=90] (deux);
-\end{tikzpicture}
+\smallskip
+\def\udt{\node (1haut){\upstrut$\triangle$\rlap{\hskip1.3em+}};
+  \node (2haut)[right=of 1haut]{\upstrut$\Box$\rlap{\hskip1.3em=}};
+  \node (3haut)[right=of 2haut]{\upstrut$\Diamond$} ;
+  \node (1bas)[below=of 1haut]{\strut\ldots\strut\rlap{\hskip1.2em+}};
+  \node (2bas)[below=of 2haut]{\strut\ldots\strut\rlap{\hskip1.2em=}};
+  \node (3bas)[below=of 3haut]{\strut\ldots\strut};}
+\transpositions
 
-\begin{tikzpicture}
-  \node (un){1};
-  \node (+)[right=of un]{+} ;
-  \node (deux)[right=of +]{2} ;
-  \node (egal)[right=of deux]{=} ;
-  \node (3)[right=of egal]{3} ;
-  \draw [<->] (un) to [out=90,in=90] (3);
-\end{tikzpicture}
 
-\begin{tikzpicture}
-  \node (un){1};
-  \node (+)[right=of un]{+} ;
-  \node (deux)[right=of +]{2} ;
-  \node (egal)[right=of deux]{=} ;
-  \node (3)[right=of egal]{3} ;
-  \draw [->] (un) to [out=90,in=135] (deux);
-  \draw [->] (deux) to [out=45,in=90] (3);
-  \draw [->] (3) to [out=-90,in=-90] (un);
-\end{tikzpicture}
+\smallskip
+\def\udt{\node (1haut){\upstrut1\rlap{\hskip1.3em+}};
+  \node (2haut)[right=of 1haut]{\upstrut3\rlap{\hskip1.3em=}};
+  \node (3haut)[right=of 2haut]{\upstrut4} ;
+  \node (1bas)[below=of 1haut]{\strut\ldots\rlap{\hskip1.1em+}};
+  \node (2bas)[below=of 2haut]{\strut\ldots\rlap{\hskip1.1em=}};
+  \node (3bas)[below=of 3haut]{\strut\ldots};}
+\transpositions
 
-\begin{tikzpicture}
-  \node (un){1};
-  \node (+)[right=of un]{+} ;
-  \node (deux)[right=of +]{2} ;
-  \node (egal)[right=of deux]{=} ;
-  \node (3)[right=of egal]{3} ;
-  \draw [<-] (un) to [out=90,in=135] (deux);
-  \draw [<-] (deux) to [out=45,in=90] (3);
-  \draw [<-] (3) to [out=-90,in=-90] (un);
-\end{tikzpicture}
+$$
+\matrix{3+6=9&\ldots+\ldots=\ldots\cr
+7+9=14&\vrule height1cm width0cm\ldots+\ldots=\ldots\cr}
+$$
 
-\begin{tikzpicture}
-  \node (un){1};
-  \node (+)[right=of un]{+} ;
-  \node (deux)[right=of +]{2} ;
-  \node (egal)[right=of deux]{=} ;
-  \node (3)[right=of egal]{3} ;
-  \draw [<->] (deux) to [out=90,in=90] (3);
-\end{tikzpicture}
+\def\udt{\node (1haut){\upstrut5\rlap{\hskip1.3em$-$}};
+  \node (2haut)[right=of 1haut]{\upstrut3\rlap{\hskip1.3em=}};
+  \node (3haut)[right=of 2haut]{\upstrut2} ;
+  \node (1bas)[below=of 1haut]{\strut\ldots\rlap{\hskip1em$-$}};
+  \node (2bas)[below=of 2haut]{\strut\ldots\rlap{\hskip1em=}};
+  \node (3bas)[below=of 3haut]{\strut\ldots};}
+\transpositions
+
+$$
+\matrix{9-6=3&\ldots-\ldots=\ldots&\vrule&7-3=4&\ldots-\ldots=\ldots\cr
+10-8=2&\vrule height1cm width0cm\ldots-\ldots=\ldots&\vrule&8-5=3&\ldots-\ldots=\ldots\cr}
+$$
+
+\def\udt{\node (1haut){\upstrut2\rlap{\hskip1.3em$+$}};
+  \node (2haut)[right=of 1haut]{\upstrut4\rlap{\hskip1.3em=}};
+  \node (3haut)[right=of 2haut]{\upstrut6} ;
+  \node (1bas)[below=of 1haut]{\strut\ldots\rlap{\hskip1em$-$}};
+  \node (2bas)[below=of 2haut]{\strut\ldots\rlap{\hskip1em=}};
+  \node (3bas)[below=of 3haut]{\strut\ldots};}
+\transpositions
+
+$$
+\matrix{10+4=14&\ldots-\ldots=\ldots&\ldots-\ldots=\ldots&
+\vrule&5+2=7&\ldots-\ldots=\ldots&\ldots-\ldots=\ldots\cr
+9+3=12&\vrule height1cm width0cm\ldots-\ldots=\ldots&\ldots-\ldots=\ldots&\vrule&
+9+9=18&\ldots-\ldots=\ldots&\ldots-\ldots=\ldots\cr}
+$$
+
+
 
 \end{document}
 
