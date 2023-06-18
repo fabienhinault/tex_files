@@ -94,7 +94,8 @@ $$
 \matrix{9-6=3&\ldots-\ldots=\ldots&\vrule&7-3=4&\ldots-\ldots=\ldots\cr
 10-8=2&\vrule height1cm width0cm\ldots-\ldots=\ldots&\vrule&8-5=3&\ldots-\ldots=\ldots\cr}
 $$
-
+\vfill
+\break
 \def\udt{\node (1haut){\upstrut2\rlap{\hskip1.3em$+$}};
   \node (2haut)[right=of 1haut]{\upstrut4\rlap{\hskip1.3em=}};
   \node (3haut)[right=of 2haut]{\upstrut6} ;
@@ -114,19 +115,24 @@ $$
 \def\2{\|\|}
 \def\3{\2\|}
 \def\6{\3\strut\3}
-\noindent
-\hbox{
-\vbox{
+\def\case#1{\hrule
+\hbox to 3cm{\vrule height 8.5mm depth 3.5mm\ #1\ \vrule height 8.5mm depth 3.5mm}
 \hrule
-\halign{&\vrule height 8.5mm depth 3.5mm#&\ #&\vrule height 8.5mm depth 
-3.5mm#&\ \hbox to 3cm{#}\ \cr
-&&&\2\hfil&&&&\2\hfil$\overleftarrow{\3}$&&&&\2\3\hfil&&&\cr
-}
+\smallskip}
+\def\bd#1#2{\vbox{
+    \case{#1\hfil}
+    \case{#1\hfil$\overleftarrow{#2}$}
+    \case{#1#2\hfil}
+\hbox to 3cm{\vrule height 1.4em depth 0pt width 0pt\hfil$\ldots+\ldots=\ldots$\hfil}
+\medskip}}
+\bd\3\2
 \hrule
-}
-} \hbox{\vbox{\hrule width 0pt
-\vrule height 8.5mm depth 3.5mm width 0pt $\ldots+\ldots=\ldots$
-\hrule width 0pt}}
+\smallskip
+\bd{\2}{\|}
+
+\hrule
+\smallskip
+\bd\6\6
 
 \end{document}
 
