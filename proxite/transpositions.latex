@@ -110,7 +110,23 @@ $$
 9+9=18&\ldots-\ldots=\ldots&\ldots-\ldots=\ldots\cr}
 $$
 
-
+\def\|{\vrule height 3ex width 0pt\vrule height 2ex width 0.8pt depth 0pt\ }
+\def\2{\|\|}
+\def\3{\2\|}
+\def\6{\3\strut\3}
+\noindent
+\hbox{
+\vbox{
+\hrule
+\halign{&\vrule height 8.5mm depth 3.5mm#&\ #&\vrule height 8.5mm depth 
+3.5mm#&\ \hbox to 3cm{#}\ \cr
+&&&\2\hfil&&&&\2\hfil$\overleftarrow{\3}$&&&&\2\3\hfil&&&\cr
+}
+\hrule
+}
+} \hbox{\vbox{\hrule width 0pt
+\vrule height 8.5mm depth 3.5mm width 0pt $\ldots+\ldots=\ldots$
+\hrule width 0pt}}
 
 \end{document}
 
