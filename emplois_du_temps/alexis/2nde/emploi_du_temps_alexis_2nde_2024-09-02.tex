@@ -30,7 +30,7 @@
 % and a depth of (21*1.2)/12*3.5 = 7.35pt
 % or 21/10*(7.5+1)...
 \def\h#1 #2 {\vbox to 17.85pt{\hbox{\8#1 }\vss\hbox{\lower7.35pt\hbox{\8#2 }}}}
-% compute the strut's height and depth
+% dimen1 = strut's height, dimen2 = strut's depth
 \dimen1=\vsize
 \divide\dimen1 by 10 % height + depth
 \advance\dimen1 by -21pt
@@ -38,13 +38,23 @@
 \dimen2=\dimen1
 \advance\dimen1 by 15.75pt %height = 21/10*7.5
 \advance\dimen2 by 5.25pt %depth = 21/10*2.5
-\def\strut{\hbox{\vrule height\dimen1 depth\dimen2 width0pt}} 
+\def\strut{\hbox{\vrule height\dimen1 depth\dimen2 width0pt}}
+\dimen3=\dimen1 \divide\dimen3 by 2
+\dimen4=\dimen2 \divide\dimen4 by 2
+\def\halfstrut{\hbox{\vrule height\dimen3 depth\dimen4 width0pt}}
+\dimen5=\dimen1 \advance \dimen5 by \dimen3
+\dimen6=\dimen2 \advance \dimen6 by \dimen4
+\def\strutandhalf{\hbox{\vrule height\dimen5 depth\dimen6 width0pt}}
+\def\vfilhalf{\vskip 0pt plus 0.5fil}
+\def\vfilandhalf{\vskip 0pt plus 1.5fil}
 \def\d #1 {\omit\hfil#1\hfil}
 \def\vr{\hrule \leaders\vrule\vfil \hbox{\strut\vrule} \leaders\vrule\vfil }
 \def\vendhole{\vskip0.4pt\vfil \strut \vfil}
 \def\vhole{\hrule \vfil \strut \vfil}
 \def\vmidhole{\hrule\vskip20pt}
 \def\cell#1{\hrule \vfil \hbox to \dimen0{\strut\hfil#1\hfil} \vfil}
+\def\halfcell{\hrule \vfilhalf \hbox to \dimen0{\halfstrut\hfil} \vfilhalf}
+\def\cellandhalf#1{\hrule \vfilandhalf \hbox to \dimen0{\strutandhalf\hfil#1\hfil} \vfilandhalf}
 \def\vfull{\vbox to \vsize{\vskip18pt \vr\vr\vr\vr\vmidhole\vr\vr\vr\vr \hrule}}
 \def\head#1{\vbox to 18pt{\hbox to \dimen0{\hfil#1\hfil}\vfil}}
 \offinterlineskip
@@ -106,8 +116,8 @@
 \head{MARDI}
 \cell{\phys}
 \cell{Anglais/Maths}
-\cell{\hg}
-\cell{\hg}
+\cellandhalf{\hg}
+\halfcell
 \vmidhole
 \cell{\maths}
 \cell{\fran}
@@ -132,10 +142,10 @@
 \vfull%
 \vbox to \vsize{%
 \head{JEUDI}
-\cell{SVT}
-\cell{SVT}
-\cell{\phys}
-\cell{\phys}
+\halfcell
+\cellandhalf{SVT}
+\cellandhalf{\phys}
+\halfcell
 \vmidhole
 \cell{\fran}
 \cell{\maths}
@@ -146,10 +156,10 @@
 \vfull%
 \vbox to \vsize{%
 \head{VENDREDI}
-\cell{Allemand}
-\cell{Allemand}
-\cell{SNT}
-\cell{SNT}
+\halfcell
+\cellandhalf{Allemand}
+\cellandhalf{SNT}
+\halfcell
 \vmidhole
 \cell{EMC}
 \cell{Anglais}
@@ -219,8 +229,8 @@
 \head{MARDI}
 \cell{\phys}
 \cell{Anglais/Maths}
-\cell{\hg}
-\cell{\hg}
+\cellandhalf{\hg}
+\halfcell
 \vmidhole
 \cell{\maths}
 \cell{\fran}
@@ -245,10 +255,10 @@
 \vfull%
 \vbox to \vsize{%
 \head{JEUDI}
-\cell{SVT}
-\cell{SVT}
-\cell{\phys}
-\cell{\phys}
+\halfcell
+\cellandhalf{SVT}
+\cellandhalf{\phys}
+\halfcell
 \vmidhole
 \cell{\fran}
 \cell{\maths}
@@ -259,10 +269,10 @@
 \vfull%
 \vbox to \vsize{%
 \head{VENDREDI}
-\cell{Allemand}
-\cell{Allemand}
-\cell{SNT}
-\cell{SNT}
+\halfcell
+\cellandhalf{Allemand}
+\cellandhalf{SNT}
+\halfcell
 \vmidhole
 \cell{\phys}
 \cell{Anglais}
