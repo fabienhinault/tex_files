@@ -1,0 +1,304 @@
+% https://stackoverflow.com/questions/447617/how-to-modify-the-paper-dimensions-in-plain-tex 
+\special{papersize=29.7cm,21cm}
+\pdfpageheight 21cm 
+\pdfpagewidth 29.7cm 
+\advance\hoffset by 1cm
+\advance\hoffset by -1in
+\advance\voffset by 1cm
+\advance\voffset by -1in
+\hsize=27.7cm
+\vsize=19cm
+\output={}
+\font\ss=cs-qhvr at 21pt
+\ss
+\font\8=cs-qhvr at 8 pt
+\font\vingt=cs-qhvr at 20pt
+\font\dixhuit=cs-qhvr at 18pt
+\def\math{Math\'ematiques}
+\def\maths{\math}
+\def\hg{Histoire G\'eo}
+\def\fran{Fran\c cais}
+\def\apfran{AP Fran\c cais}
+\def\phys{{\vingt Physique Chimie}}
+% set dimen0 to a 5th of (hsize - the place for hours)
+\dimen0=\hsize
+\setbox0=\hbox{\vrule\800:00 \vrule}
+\advance\dimen0 by -\wd0
+\divide\dimen0 by 5
+\advance\dimen0 by -0.4pt
+% a strut for 21pt characters has a height of (21*1.2)/12*8.5 = 17,85pt
+% and a depth of (21*1.2)/12*3.5 = 7.35pt
+% or 21/10*(7.5+1)...
+\def\h#1 #2 {\vbox to 17.85pt{\hbox{\8#1 }\vss\hbox{\lower7.35pt\hbox{\8#2 }}}}
+% dimen1 = strut's height, dimen2 = strut's depth
+\dimen1=\vsize
+\divide\dimen1 by 10 % height + depth
+\advance\dimen1 by -21pt
+\divide\dimen1 by 2 % here dimen1 equals half of the space to put between 2 lines to fill the page.
+\dimen2=\dimen1
+\advance\dimen1 by 15.75pt %height = 21/10*7.5
+\advance\dimen2 by 5.25pt %depth = 21/10*2.5
+\def\strut{\hbox{\vrule height\dimen1 depth\dimen2 width0pt}}
+\dimen3=\dimen1 \divide\dimen3 by 2
+\dimen4=\dimen2 \divide\dimen4 by 2
+\def\halfstrut{\hbox{\vrule height\dimen3 depth\dimen4 width0pt}}
+\dimen5=\dimen1 \advance \dimen5 by \dimen3
+\dimen6=\dimen2 \advance \dimen6 by \dimen4
+\def\strutandhalf{\hbox{\vrule height\dimen5 depth\dimen6 width0pt}}
+\def\vfilhalf{\vskip 0pt plus 0.5fil}
+\def\vfilandhalf{\vskip 0pt plus 1.5fil}
+\def\d #1 {\omit\hfil#1\hfil}
+\def\vr{\hrule \leaders\vrule\vfil \hbox{\strut\vrule} \leaders\vrule\vfil }
+\def\vendhole{\vskip0.4pt\vfil \strut \vfil}
+\def\vhole{\hrule \vfil \strut \vfil}
+\def\vmidhole{\hrule\vskip20pt}
+\def\cell#1{\hrule \vfil \hbox to \dimen0{\strut\hfil#1\hfil} \vfil}
+\def\halfcell{\hrule \vfilhalf \hbox to \dimen0{\halfstrut\hfil} \vfilhalf}
+\def\cellandhalf#1{\hrule \vfilandhalf \hbox to \dimen0{\strutandhalf\hfil#1\hfil} \vfilandhalf}
+\def\vfull{\vbox to \vsize{\vskip18pt \vr\vr\vr\vr\vmidhole\vr\vr\vr \hrule}}
+\def\head#1{\vbox to 18pt{\hbox to \dimen0{\hfil#1\hfil}\vfil}}
+\def\heures{\vbox to \vsize{%
+\vskip18pt
+\vskip0.4pt
+\vfil
+\h08:25 09:20 
+\vfil
+\vskip0.4pt
+\vfil
+\h09:25 10:18 
+\vfil
+\vskip0.4pt
+\vfil
+\h10:33 11:28 
+\vfil
+\vskip0.4pt
+\vfil
+\h11:28 12:25 
+\vfil
+\vskip0.4pt
+\vskip20pt
+\vskip0.4pt
+\vfil
+\h14:00 14:55 
+\vfil
+\vskip0.4pt
+\vfil
+\h15:00 15:55 
+\vfil
+\vskip0.4pt
+\vfil
+\h16:10 17:05 
+\vfil
+\vskip0.4pt
+}}
+%
+\offinterlineskip
+\hbox{
+\vbox to \vsize{%
+\vskip18pt
+\vskip0.4pt
+\vfil
+\h08:25 09:20 
+\vfil
+\vskip0.4pt
+\vfil
+\h09:25 10:18 
+\vfil
+\vskip0.4pt
+\vfil
+\h10:33 11:28 
+\vfil
+\vskip0.4pt
+\vfil
+\h11:28 12:25 
+\vfil
+\vskip0.4pt
+\vskip20pt
+\vskip0.4pt
+\vfil
+\h14:00 14:55 
+\vfil
+\vskip0.4pt
+\vfil
+\h15:00 15:55 
+\vfil
+\vskip0.4pt
+\vfil
+\h16:10 17:05 
+\vfil
+\vskip0.4pt
+}%
+\vfull%
+\vbox to \vsize{%
+\head{LUNDI}
+\cell{EPS}
+\cell{Musique}
+\cell{SVT}
+\cell{Anglais}
+\vmidhole
+\cell{\fran}
+\cell{\maths}
+\cell{Allemand}
+\hrule
+}%
+\vfull%
+\vbox to \vsize{%
+\head{MARDI}
+\cell{}
+\cell{Allemand}
+\cell{\fran}
+\cell{\maths}
+\vmidhole
+\cell{Anglais}
+\cell{\hg}
+\cell{}
+\hrule
+}%
+\vfull%
+\vbox to \vsize{%
+\head{MERCREDI}
+\cell{Anglais}
+\cell{Arts plastiques}
+\cell{\fran}
+\cell{Technologie}
+\vmidhole
+\cell{}
+\cell{}
+\cell{}
+\hrule
+}%
+\vfull%
+\vbox to \vsize{%
+\head{JEUDI}
+\cell{}
+\cell{\maths}
+\cell{}
+\cell{SVT}
+\vmidhole
+\cell{\phys}
+\cell{\hg}
+\cell{}
+\hrule
+}%
+\vfull%
+\vbox to \vsize{%
+\head{VENDREDI}
+\cell{EPS}
+\cell{EPS}
+\cell{Allemand}
+\cell{\fran}
+\vmidhole
+\cell{\maths}
+\cell{\hg}
+\cell{}
+\hrule
+}%
+\vfull%
+}
+
+\hbox{
+\vbox to \vsize{%
+\vskip18pt
+\vskip0.4pt
+\vfil
+\h08:25 09:20 
+\vfil
+\vskip0.4pt
+\vfil
+\h09:25 10:18 
+\vfil
+\vskip0.4pt
+\vfil
+\h10:33 11:28 
+\vfil
+\vskip0.4pt
+\vfil
+\h11:28 12:25 
+\vfil
+\vskip0.4pt
+\vskip20pt
+\vskip0.4pt
+\vfil
+\h14:00 14:55 
+\vfil
+\vskip0.4pt
+\vfil
+\h15:00 15:55 
+\vfil
+\vskip0.4pt
+\vfil
+\h16:10 17:05 
+\vfil
+\vskip0.4pt
+}%
+\vfull%
+\vbox to \vsize{%
+\head{LUNDI}
+\cell{EPS}
+\cell{Musique}
+\cell{SVT}
+\cell{Anglais}
+\vmidhole
+\cell{\fran}
+\cell{\maths}
+\cell{Allemand}
+\hrule
+}%
+\vfull%
+\vbox to \vsize{%
+\head{MARDI}
+\cell{}
+\cell{Technologie}
+\cell{\fran}
+\cell{\maths}
+\vmidhole
+\cell{Anglais}
+\cell{\hg}
+\cell{}
+\hrule
+}%
+\vfull%
+\vbox to \vsize{%
+\head{MERCREDI}
+\cell{Anglais}
+\cell{Arts plastiques}
+\cell{\fran}
+\cell{Technologie}
+\vmidhole
+\cell{}
+\cell{}
+\cell{}
+\hrule
+}%
+\vfull%
+\vbox to \vsize{%
+\head{JEUDI}
+\cell{}
+\cell{\maths}
+\cell{\phys}
+\cell{Vie de classe}
+\vmidhole
+\cell{\phys}
+\cell{\hg}
+\cell{\fran}
+\hrule
+}%
+\vfull%
+\vbox to \vsize{%
+\head{VENDREDI}
+\cell{EPS}
+\cell{EPS}
+\cell{Allemand}
+\cell{\fran}
+\vmidhole
+\cell{}
+\cell{\hg}
+\cell{}
+\hrule
+}%
+\vfull%
+}
+
+\bye
+
+
